@@ -1,4 +1,4 @@
-package com.company;
+
 import java.util.Scanner;
 
 public class calculatrice {
@@ -20,22 +20,48 @@ public class calculatrice {
 
             System.out.print("Choisir une fonction : ");
 
-            choix = input.nextInt();
+            while(true){
+                try {
+                choix = input.nextInt();
+                    break;
+
+            } catch (Exception e) {
+                input.nextLine();
+                System.err.println("erreur valeur:");
+            }
+
+
+            }
+
 
             if (choix == 8) {
                 System.out.println("Merci d'avoir utilisé la calculatrice. À bientôt !");
                 break;
             }
-
+            int N1,N2 = 0;
             System.out.print("Donner le nombre a: ");
-            int N1 = input.nextInt();
-            int N2 = 0;
+            while(true) {
+                try {
+                    N1 = input.nextInt();
+                    break;
+                } catch (Exception e) {
+                    input.nextLine();
+                    System.err.println("erreur valeur:");
+
+                }
+            }
 
             if (choix != 6 && choix != 7) {
                 System.out.print("Donner le nombre b: ");
+                while(true){
+                try {
                 N2 = input.nextInt();
-            }
-
+                break;
+            } catch (Exception e) {
+                    input.nextLine();
+                    System.err.println("erreur valeur");
+                }
+}}
             switch (choix) {
                 case 1:
                     addition(N1, N2);
@@ -107,7 +133,8 @@ public class calculatrice {
         } else {
             long resultat = 1;
             for (int i = 1; i <= n; i++) {
-                resultat = resultat * i;
+                resultat *= i;
+
             }
             return resultat;
         }
