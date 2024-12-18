@@ -86,7 +86,7 @@ public class calculatrice {
                     racineCarree(N1);
                     break;
                 case 7:
-                    factorielle(N1);
+                    calculerFactorielle(N1);
                     break;
                 default:
                     System.out.println("Erreur : Option non valide.");
@@ -120,23 +120,22 @@ public class calculatrice {
         System.out.println("La racine carrée de " + a + " est : " + Math.sqrt(a));
     }
 
-    public static void factorielle(int a) {
-        System.out.println("La factorielle de " + a + " est : " + calculerFactorielle(a));
-    }
 
-    public static long calculerFactorielle(int n) {
+
+    public static void calculerFactorielle(int n) {
         if (n < 0) {
             System.out.println("Erreur : La factorielle n'est pas définie pour les nombres négatifs.");
-            return -1;
-        } else if (n == 0) {
-            return 1;
-        } else {
+        }
+        if (n == 0) {
+            System.out.println("Resultat " + 1 );
+        }
+        if(n > 0){
             long resultat = 1;
             for (int i = 1; i <= n; i++) {
                 resultat *= i;
-
             }
-            return resultat;
+            System.out.println("Resultat " + resultat );
+
         }
     }
 
